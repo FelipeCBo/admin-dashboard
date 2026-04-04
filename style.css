@@ -1,16 +1,25 @@
 body {
     display: grid;
-    grid-template-columns: 20vw 30vw 30vw 20vw;
+    grid-template-columns: 2fr 3fr 3fr 2fr;
     grid-template-rows: 100vh;
     margin: 0;
 }
 
 .sidebar {
-    background-color: RGB(25, 146, 212);
+    background-color: rgb(25, 146, 212);
     color: white;
+
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: repeat(12, 50px);
+
+    padding: 50px;
+    padding-top: 10px;
 }
 
-.logo {
+.logo_icon {
     width: 50px;
     height: 50px;
     background-repeat: no-repeat;
@@ -19,7 +28,27 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 10px;
+    font-size: 25px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    gap: 5px;
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.menu_element {
     font-size: 25px;
 }
 
@@ -41,19 +70,79 @@ body {
 }
 
 .projects_title {
-    background-color: yellow;
-    padding-left: 60px;
+    background-color: #E2E8F0;
+    padding-left: 80px;
     height: 40px;
 }
 
 .header {
-    background-color: green;
+    background-color: white;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+    padding: 10px;
+}
+
+.header_element {
+    align-self: center;
+}
+
+.top_functionality {
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 4fr) 1fr 1.5fr 300px;
+}
+
+.search_bar {
+    grid-column: 2 / 6;
+    background-color: #E2E8F0;
+    border-radius: 16px;
+    height: 30px;
+}
+
+.user_image_mini {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.user_name {
+    font-size: 20px;
+}
+
+.user_functionality {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr 1fr 1fr;
+    grid-template-rows: 100px;
+    padding-right: 150px;
+}
+
+.user_image {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.greetings_user_name {
+    font-size: 25px;
+}
+
+.header_element.button {
+    color: white;
+    font-size: 20px;
+    background-color: rgb(25, 146, 212);
+    border-radius: 24px;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
 }
 
 .projects_content {
-    background-color: yellow;
+    background-color: #E2E8F0;
 
     /* Grid container */
     display: grid;
@@ -62,12 +151,22 @@ body {
     gap: 40px;
     padding: 60px;
     padding-top: 10px;
-    padding-bottom: 40px;
+
+    justify-content: center;
 }
 
 .project {
-    background-color: purple;
+    background-color: white;
     border-radius: 8px;
+    box-shadow: 6px 6px 6px hsl(206, 3%, 53%);
+}
+
+.yellow_stripe {
+    width: 2%;
+    height: 100%;
+    background-color: gold;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .information_content {
