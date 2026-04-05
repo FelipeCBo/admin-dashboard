@@ -1,9 +1,11 @@
 body {
     display: grid;
     grid-template-columns: 2fr 3fr 3fr 2fr;
-    grid-template-rows: 100vh;
+    grid-template-rows: 100%;
     margin: 0;
 }
+
+/* -----Sidebar----- */
 
 .sidebar {
     background-color: rgb(25, 146, 212);
@@ -52,28 +54,17 @@ h2 {
     font-size: 25px;
 }
 
+/* -----Principal body----- */
+
 .principal_body {
     grid-column: 2 / 5; 
 
-    /* Grid container */
     display: grid;
-    grid-template-columns: 75fr 25fr;
-    grid-template-rows: 15fr 85fr;
-}
-
-.projects_section {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-
-    display: grid;
+    grid-template-columns: minmax(60rem, 5fr) minmax(20rem, 2fr);
     grid-template-rows: auto 1fr;
 }
 
-.projects_title {
-    background-color: #E2E8F0;
-    padding-left: 80px;
-    height: 40px;
-}
+/* -----Header----- */
 
 .header {
     background-color: white;
@@ -88,7 +79,7 @@ h2 {
 
 .top_functionality {
     display: grid;
-    grid-template-columns: 1fr repeat(5, 4fr) 1fr 1.5fr 300px;
+    grid-template-columns: minmax(5rem, 0.5fr) repeat(5, minmax(10rem, 2fr)) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(5rem, 1fr) minmax(10rem, 1fr);
 }
 
 .search_bar {
@@ -112,7 +103,7 @@ h2 {
 
 .user_functionality {
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 1fr 1fr 1fr;
+    grid-template-columns: minmax(10rem, 1fr) minmax(20rem, 3fr) minmax(10rem, 3fr) repeat(3, minmax(10rem, 1fr));
     grid-template-rows: 100px;
     padding-right: 150px;
 }
@@ -141,13 +132,28 @@ h2 {
     margin: 10px;
 }
 
+/* -----Projects----- */
+
+.projects_section {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.projects_title {
+    background-color: #E2E8F0;
+    padding-left: 80px;
+    height: 40px;
+}
+
 .projects_content {
     background-color: #E2E8F0;
 
-    /* Grid container */
     display: grid;
-    grid-template-columns: 30rem 30rem;
-    grid-template-rows: 25fr 25fr 25fr;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    grid-template-rows: repeat(3, minmax(10rem, 1fr));
     gap: 40px;
     padding: 60px;
     padding-top: 10px;
@@ -159,18 +165,128 @@ h2 {
     background-color: white;
     border-radius: 8px;
     box-shadow: 6px 6px 6px hsl(206, 3%, 53%);
+
+    display: grid;
+    grid-template-columns: minmax(1%, 0.5rem) minmax(10rem, 99%);
 }
 
 .yellow_stripe {
-    width: 2%;
-    height: 100%;
-    background-color: gold;
+    background-color: rgb(236, 180, 4);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
+.principal_content {
+    display: grid;
+    grid-template-columns: minmax(12rem, 100%);
+    grid-template-rows: minmax(6rem, 60%) minmax(2rem, 40%);
+    padding: 20px;
+}
+
+.project_text_content {
+    background-color: white;
+    font-size: 20px;
+}
+
+.project_functionality_content {
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(2rem, 10%));
+    justify-content: end;
+    align-items: end;
+    padding: 10px;
+    gap: 20px;
+}
+
+.project_functionality_icon {
+    width: 30px;
+    height: auto;
+}
+
+/* -----Information----- */
+
 .information_content {
-    background-color: blue;
+    /*background-color: #E2E8F0;*/
+    background-color: #E2E8F0;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: minmax(10rem, 75%);
+    grid-auto-rows: auto;
+    padding: 10px;
+    padding-bottom: 3rem;
+    justify-content: center;
+    gap: 10px;
+}
+
+.announcements, .trending {
+    background-color: #E2E8F0;
+
+    display: grid;
+    grid-template-columns: minmax(10rem, 100%);
+    grid-template-rows: minmax(2rem, 10%) auto;
+}
+
+.information_element .title{
+    font-size: 20px;
+}
+
+.announcement_box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px hsl(206, 3%, 53%);
+
+    display: grid;
+    grid-template-columns: minmax(10rem, 15rem);
+    justify-content: center;
+}
+
+.gray_divisor {
+    border-bottom: 1px solid hwb(206 52% 45% / 0.541);
+}
+
+.announcement_text_title {
+    font-size: 20px;
+}
+
+.announcement_text {
+    font-size: 15px;
+}
+
+.trending_box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 6px 6px 6px hsl(206, 3%, 53%);
+
+    display: grid;
+    grid-template-columns: minmax(8rem, 15rem);
+    grid-template-rows: repeat(4, minmax(1rem, 1fr));   
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.trending_text {
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: minmax(20%, 2rem) minmax(3rem, 80%);
+}
+
+.trending_user_icon {
+    width: 45px;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.trending_user_name {
+    font-size: 15px;
 }
